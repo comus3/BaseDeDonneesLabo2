@@ -36,6 +36,48 @@ class Terminal
         }
     }
 
+
+    static void AfficherListes()
+    {
+        Console.WriteLine("Calling AfficherListes...");
+        
+    }
+
+    static void AfficherArticles()
+    {
+        Console.WriteLine("Calling AfficherArticles...");
+        
+    }
+
+    static void AfficherArticlesParCategorie()
+    {
+        Console.WriteLine("Calling AfficherArticlesParCategorie...");
+
+    }
+
+    static void AfficherArticlesVendusAChampion()
+    {
+        Console.WriteLine("Calling AfficherArticlesVendusAChampion...");
+
+    }
+
+    static void AfficherFournisseursVolantStockSup5()
+    {
+        Console.WriteLine("Calling AfficherFournisseursVolantStockSup5...");
+
+    }
+
+    static void AfficherFournisseursMoinsChersParArticle()
+    {
+        Console.WriteLine("Calling AfficherFournisseursMoinsChersParArticle...");
+
+    }
+
+    static void ListePrixMoyensParProduit()
+    {
+        Console.WriteLine("Calling ListePrixMoyensParProduit...");
+        // Call corresponding method in QueryMaker or implement logic here
+    }
     static void Help()
     {
         Console.WriteLine("Bienvenue dans l'aide de l'application:");
@@ -68,6 +110,4 @@ class Terminal
                 app.SwitchCase(commande);
             }
     }
-}
-
 }

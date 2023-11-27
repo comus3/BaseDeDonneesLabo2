@@ -4,7 +4,7 @@ namespace carAccessory;
 
 public class Displayer
 {
-     static void DisplayData(DataTable dataTable)
+     public static void DisplayData(DataTable dataTable)
     {
         // Display column headers
         foreach (DataColumn column in dataTable.Columns)

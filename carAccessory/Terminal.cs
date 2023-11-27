@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.Data;
 namespace carAccessory;
 
 class Terminal
@@ -19,6 +18,7 @@ class Terminal
             { "ArticlesStockes", AfficherFournisseursVolantStockSup5 },
             { "a_calc", AfficherFournisseursMoinsChersParArticle },
             { "b_calc", ListePrixMoyensParProduit },
+            {"custom",CustomCommand},
             {"help",Help},
             { "exit", Exit }
         };
@@ -36,47 +36,68 @@ class Terminal
         }
     }
 
-
+    static void CustomCommand()
+    {
+        Console.WriteLine("Calling AfficherListes...");
+        Console.Write("entrez vitre query.   ");
+        string query = Console.ReadLine();
+        DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
+        Displayer.DisplayData(result);
+    }
     static void AfficherListes()
     {
         Console.WriteLine("Calling AfficherListes...");
-        
+        string query = "SELECT * FROM dvauto";
+        DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
+        Displayer.DisplayData(result);
     }
 
     static void AfficherArticles()
     {
         Console.WriteLine("Calling AfficherArticles...");
-        
+        string query = "SELECT * FROM dvauto";
+        DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
+        Displayer.DisplayData(result);
     }
 
     static void AfficherArticlesParCategorie()
     {
         Console.WriteLine("Calling AfficherArticlesParCategorie...");
-
+        string query = "SELECT * FROM dvauto";
+        DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
+        Displayer.DisplayData(result);
     }
 
     static void AfficherArticlesVendusAChampion()
     {
         Console.WriteLine("Calling AfficherArticlesVendusAChampion...");
-
+        string query = "SELECT * FROM dvauto";
+        DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
+        Displayer.DisplayData(result);
     }
 
     static void AfficherFournisseursVolantStockSup5()
     {
         Console.WriteLine("Calling AfficherFournisseursVolantStockSup5...");
-
+        string query = "SELECT * FROM dvauto";
+        DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
+        Displayer.DisplayData(result);
     }
 
     static void AfficherFournisseursMoinsChersParArticle()
     {
         Console.WriteLine("Calling AfficherFournisseursMoinsChersParArticle...");
-
+        string query = "SELECT * FROM dvauto";
+        DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
+        Displayer.DisplayData(result);
     }
 
     static void ListePrixMoyensParProduit()
     {
         Console.WriteLine("Calling ListePrixMoyensParProduit...");
-        // Call corresponding method in QueryMaker or implement logic here
+        string query = "SELECT * FROM dvauto";
+        DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
+        Displayer.DisplayData(result);
     }
     static void Help()
     {

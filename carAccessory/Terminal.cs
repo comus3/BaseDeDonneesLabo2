@@ -55,7 +55,7 @@ class Terminal
     static void AfficherArticles()
     {
         Console.WriteLine("Calling AfficherArticles...");
-        string query = "SELECT * FROM dvauto";
+        string query = "SELECT * FROM dvauto.articles";
         DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
         Displayer.DisplayData(result);
     }
@@ -63,7 +63,7 @@ class Terminal
     static void AfficherArticlesParCategorie()
     {
         Console.WriteLine("Calling AfficherArticlesParCategorie...");
-        string query = "SELECT * FROM dvauto";
+        string query = "select description_categorie, description_article, pk_num_article, Prix from dvauto.categorie ";
         DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
         Displayer.DisplayData(result);
     }
@@ -71,7 +71,7 @@ class Terminal
     static void AfficherArticlesVendusAChampion()
     {
         Console.WriteLine("Calling AfficherArticlesVendusAChampion...");
-        string query = "SELECT * FROM dvauto";
+        string query = "select description_Article,Nom from dvauto.nomenclature;Inner Join dvauto.fournisseurs on pk_Numero_fournisseur=fk_num_categorie where fk_num_categorie=5;";
         DataTable result = Program.queryMaker.ExecuteSelectQuery(query);
         Displayer.DisplayData(result);
     }
@@ -124,10 +124,11 @@ class Terminal
     public void TerminalRunner()
     {
         var app = new Terminal();
+        app.terminal();
             while (true)
             {
-                Console.Write("Entrez une commande ");
-                var commande = Console.ReadLine().ToLower();
+                Console.Write("Entrez une commande :  ");
+                var commande = Console.ReadLine();
                 app.SwitchCase(commande);
             }
     }
